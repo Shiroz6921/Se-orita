@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti...</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdf2f8; /* Un tono rosado muy suave */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+
+        h1 {
+            color: #db2777; /* Rosa oscuro */
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .question-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4b5563;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #f3f4f6;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            outline: none;
+            border-color: #fbcfe8;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        button {
+            background-color: #db2777;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            width: 100%;
+            font-size: 1.1em;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        button:hover {
+            background-color: #be185d;
+        }
+
+        #mensajeFinal {
+            display: none;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fcfdfd;
+            border: 2px dashed #fbcfe8;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Hola 👋</h1>
+        
+        <p class="intro">
+            Quería hacer algo un poco diferente. Me está encantando conocerte y se me ocurrió armar esta pequeña página para seguir descubriendo más cosas sobre ti. 
+            <br><br>¿Te animas a responder?
+        </p>
+
+        <form id="formularioPreguntas">
+            
+            <div class="question-group">
+                <label for="q1">1. Si pudieras teletransportarte ahora mismo a cualquier lugar del mundo, ¿a dónde irías y qué estarías haciendo?</label>
+                <textarea id="q1" required placeholder="Escribe aquí..."></textarea>
+            </div>
+
+            <div class="question-group">
+                <label for="q2">2. ¿Cuál es esa película o serie que podrías ver mil veces sin aburrirte?</label>
+                <input type="text" id="q2" required placeholder="Tu respuesta...">
+            </div>
+
+            <div class="question-group">
+                <label for="q3">3. ¿Qué es algo que te hace reír muchísimo, casi sin falta?</label>
+                <textarea id="q3" required placeholder="Cuéntame..."></textarea>
+            </div>
+
+            <div class="question-group">
+                <label for="q4">4. Si tuviéramos que elegir una comida para nuestro próximo encuentro, ¿cuál elegirías?</label>
+                <input type="text" id="q4" required placeholder="Hamburguesas, sushi, tacos...">
+            </div>
+
+            <button type="submit">Enviar respuestas</button>
+        </form>
+
+        <div id="mensajeFinal">
+            <h2>¡Gracias por responder! ❤️</h2>
+            <p>Por favor, tómale una captura de pantalla a tus respuestas o avísame por WhatsApp que ya terminaste para que podamos hablarlas.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('formularioPreguntas').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+            
+            // Oculta el formulario y muestra el mensaje final
+            document.getElementById('formularioPreguntas').style.display = 'none';
+            document.getElementById('mensajeFinal').style.display = 'block';
+            window.scrollTo(0, 0); // Sube la pantalla al inicio
+        });
+    </script>
+</body>
+</html>
