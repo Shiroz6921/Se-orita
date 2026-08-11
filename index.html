@@ -9,7 +9,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #fdf2f8; /* Un tono rosado muy suave */
+            background-color: #fdf2f8; 
             color: #333;
             margin: 0;
             padding: 20px;
@@ -28,7 +28,7 @@
         }
 
         h1 {
-            color: #db2777; /* Rosa oscuro */
+            color: #db2777;
             text-align: center;
             margin-bottom: 10px;
         }
@@ -105,52 +105,88 @@
 <body>
 
     <div class="container">
-        <h1>Hola 👋</h1>
+        <h1>Hola Dama :3</h1>
         
         <p class="intro">
-            Quería hacer algo un poco diferente. Me está encantando conocerte y se me ocurrió armar esta pequeña página para seguir descubriendo más cosas sobre ti. 
+            Quería hacer algo un poco diferente. Esto es un detalle de lo mucho que me gusta hablar contigo y conocerte :3 asiq hice un quiz para ver cuanto recuerdas... 
             <br><br>¿Te animas a responder?
         </p>
 
         <form id="formularioPreguntas">
-            
             <div class="question-group">
-                <label for="q1">1. Si pudieras teletransportarte ahora mismo a cualquier lugar del mundo, ¿a dónde irías y qué estarías haciendo?</label>
-                <textarea id="q1" required placeholder="Escribe aquí..."></textarea>
+                <span class="question-title">1. ¿Hace cuánto hablamos?</span>
+                <label class="radio-option">
+                    <input type="radio" name="q1" value="Playa" required> Hace 1 mes
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q1" value="Nieve"> Hace 2 meses
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q1" value="Ciudad"> Hace 20 días
+                </label>
             </div>
 
             <div class="question-group">
-                <label for="q2">2. ¿Cuál es esa película o serie que podrías ver mil veces sin aburrirte?</label>
-                <input type="text" id="q2" required placeholder="Tu respuesta...">
+                <span class="question-title">2. ¿Qué plan prefieres para un domingo por la tarde?</span>
+                <label class="radio-option">
+                    <input type="radio" name="q2" value="Peliculas" required> Maratón de películas/series en pijama
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q2" value="Pasear"> Salir a caminar
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q2" value="Aventura"> Cocinar
+                </label>
             </div>
 
             <div class="question-group">
-                <label for="q3">3. ¿Qué es algo que te hace reír muchísimo, casi sin falta?</label>
-                <textarea id="q3" required placeholder="Cuéntame..."></textarea>
+                <span class="question-title">3. ¿Del 1 al 10, cuánto te quiero conocer?</span>
+                <label class="radio-option">
+                    <input type="radio" name="q3" value="Pop" required> 1000000
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q3" value="Rock"> 10
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q3" value="Urbano"> 67
+                </label>
             </div>
 
             <div class="question-group">
-                <label for="q4">4. Si tuviéramos que elegir una comida para nuestro próximo encuentro, ¿cuál elegirías?</label>
-                <input type="text" id="q4" required placeholder="Hamburguesas, sushi, tacos...">
+                <span class="question-title">4. Si tuviéramos que elegir una comida para nuestro próximo encuentro, ¿cuál sería?</span>
+                <label class="radio-option">
+                    <input type="radio" name="q4" value="Hamburguesa" required> Unas buenas hamburguesas
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q4" value="Sushi"> Sushi, sin pensarlo dos veces
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q4" value="Pizza"> Pizza 
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="q4" value="Tacos"> Todas las anteriores
+                </label>
             </div>
 
             <button type="submit">Enviar respuestas</button>
         </form>
 
+        
         <div id="mensajeFinal">
-            <h2>¡Gracias por responder! ❤️</h2>
-            <p>Por favor, tómale una captura de pantalla a tus respuestas o avísame por WhatsApp que ya terminaste para que podamos hablarlas.</p>
+            <h2>¡Gracias por responder! </h2>
+            <p>Por favor, no pienses nunca que quiero algo a cambio de demostrar lo mucho que me importas o te quiero :3. 
+                Espero ser lo suficientemente interesante y no aburrirte AJSJDASJJ. Tkm muchísimo, señorita. 💗</p>
         </div>
     </div>
 
     <script>
         document.getElementById('formularioPreguntas').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que la página se recargue
+            e.preventDefault();
             
-            // Oculta el formulario y muestra el mensaje final
+            
             document.getElementById('formularioPreguntas').style.display = 'none';
             document.getElementById('mensajeFinal').style.display = 'block';
-            window.scrollTo(0, 0); // Sube la pantalla al inicio
+            window.scrollTo(0, 0);
         });
     </script>
 </body>
