@@ -43,34 +43,37 @@
 
         .question-group {
             margin-bottom: 25px;
+            background-color: #fffafb;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid #fbcfe8;
         }
 
-        label {
+        .question-title {
             display: block;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
             color: #4b5563;
         }
 
-        input[type="text"], textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #f3f4f6;
+        .radio-option {
+            display: block;
+            margin-bottom: 12px;
+            cursor: pointer;
+            padding: 10px 15px;
             border-radius: 8px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1em;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
+            transition: background-color 0.2s ease;
+            font-size: 0.95em;
         }
 
-        input[type="text"]:focus, textarea:focus {
-            outline: none;
-            border-color: #fbcfe8;
+        .radio-option:hover {
+            background-color: #fce7f3;
         }
 
-        textarea {
-            resize: vertical;
-            min-height: 80px;
+        input[type="radio"] {
+            margin-right: 10px;
+            accent-color: #db2777;
+            transform: scale(1.2);
         }
 
         button {
@@ -85,6 +88,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             font-family: 'Poppins', sans-serif;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -99,6 +103,59 @@
             background-color: #fcfdfd;
             border: 2px dashed #fbcfe8;
             border-radius: 10px;
+        }
+
+        .resultado-texto {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #db2777;
+            margin: 15px 0;
+        }
+
+        /* Estilos para las canciones */
+        .canciones-container {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #fbcfe8;
+        }
+
+        .canciones-container h3 {
+            color: #db2777;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .canciones-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cancion-link {
+            display: block;
+            width: 150px;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cancion-link:hover {
+            transform: scale(1.05); 
+        }
+
+        .cancion-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .cancion-titulo {
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: #555;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -127,9 +184,9 @@
             </div>
 
             <div class="question-group">
-                <span class="question-title">2. ¿Qué plan prefieres para un domingo por la tarde?</span>
+                <span class="question-title">2. ¿Qué plan prefiero para un domingo por la tarde?</span>
                 <label class="radio-option">
-                    <input type="radio" name="q2" value="Peliculas" required> Maratón de películas/series en pijama
+                    <input type="radio" name="q2" value="Peliculas" required> Maratón de películas/series
                 </label>
                 <label class="radio-option">
                     <input type="radio" name="q2" value="Pasear"> Salir a caminar
@@ -155,10 +212,10 @@
             <div class="question-group">
                 <span class="question-title">4. Si tuviéramos que elegir una comida para nuestro próximo encuentro, ¿cuál sería?</span>
                 <label class="radio-option">
-                    <input type="radio" name="q4" value="Hamburguesa" required> Unas buenas hamburguesas
+                    <input type="radio" name="q4" value="Hamburguesa" required> Unas hamburguesas
                 </label>
                 <label class="radio-option">
-                    <input type="radio" name="q4" value="Sushi"> Sushi, sin pensarlo dos veces
+                    <input type="radio" name="q4" value="Sushi"> Sushi
                 </label>
                 <label class="radio-option">
                     <input type="radio" name="q4" value="Pizza"> Pizza 
@@ -174,15 +231,69 @@
         
         <div id="mensajeFinal">
             <h2>¡Gracias por responder! </h2>
-            <p>Por favor, no pienses nunca que quiero algo a cambio de demostrar lo mucho que me importas o te quiero :3. 
-                Espero ser lo suficientemente interesante y no aburrirte AJSJDASJJ. Tkm muchísimo, señorita. 💗</p>
+            
+            <!-- Aquí aparece la puntuación -->
+            <p class="resultado-texto" id="textoPuntuacion"></p>
+            <p id="mensajePersonalizado"></p>
+            
+            <p style="margin-top: 25px; line-height: 1.6;">Por favor, no pienses nunca que quiero algo a cambio de demostrar lo mucho que me importas o te quiero :3. <br>Espero ser lo suficientemente interesante y no aburrirte AJSJDASJJ. Tkm muchísimo, señorita. 💗</p>
+
+            
+            <div class="canciones-container">
+                <h3>Estas canciones siento que sontu uwu 🎶</h3>
+                <div class="canciones-grid">
+                    
+                    <!-- CANCIÓN 1 -->
+                    <a href="https://open.spotify.com/intl-es/track/0wJ9zDx3bJEgYtAAQde1KZ?si=5e10468f366c4328" target="_blank" class="cancion-link">
+                        <img src="https://i.pinimg.com/originals/11/05/92/1105922fa90d5620d7418ef788c9f652.jpg" alt="Canción 1" class="cancion-img">
+                        <div class="cancion-titulo">Clic para escuchar</div>
+                    </a>
+
+                    <!-- CANCIÓN 2 -->
+                    <a href="https://open.spotify.com/intl-es/track/4kjI1gwQZRKNDkw1nI475M?si=28112bea84a749a9" target="_blank" class="cancion-link">
+                        <img src="https://media1.tenor.com/m/UP48F3gIos0AAAAd/ozuna-formula.gif" alt="Portada Canción 2" class="cancion-img">
+                        <div class="cancion-titulo">Clic para escuchar</div>
+                    </a>
+
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
+        const respuestasCorrectas = {
+            q1: "Playa",      
+            q2: "Aventura",   
+            q3: "Pop",        
+            q4: "Tacos"      
+        };
+
         document.getElementById('formularioPreguntas').addEventListener('submit', function(e) {
             e.preventDefault();
             
+            let puntaje = 0;
+            const totalPreguntas = 4;
+
+            const r1 = document.querySelector('input[name="q1"]:checked').value;
+            const r2 = document.querySelector('input[name="q2"]:checked').value;
+            const r3 = document.querySelector('input[name="q3"]:checked').value;
+            const r4 = document.querySelector('input[name="q4"]:checked').value;
+
+            if (r1 === respuestasCorrectas.q1) puntaje++;
+            if (r2 === respuestasCorrectas.q2) puntaje++;
+            if (r3 === respuestasCorrectas.q3) puntaje++;
+            if (r4 === respuestasCorrectas.q4) puntaje++;
+
+            document.getElementById('textoPuntuacion').innerText = `Acertaste ${puntaje} de ${totalPreguntas}`;
+
+            let mensajePers = document.getElementById('mensajePersonalizado');
+            if (puntaje === 4) {
+                mensajePers.innerText = "¡10/10! Tienes una memoria increíble. ";
+            } else if (puntaje >= 2) {
+                mensajePers.innerText = "¡Muy bien! Recordaste varias cosas. ";
+            } else {
+                mensajePers.innerText = "nt chat, tendré que recordártelo más seguido... ";
+            }
             
             document.getElementById('formularioPreguntas').style.display = 'none';
             document.getElementById('mensajeFinal').style.display = 'block';
